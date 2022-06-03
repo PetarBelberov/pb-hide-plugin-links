@@ -21,11 +21,16 @@ class HidePluginLinks
     }
 
 	function disable_plugin_deactivation( $actions, $plugin_file ) {
-		if ( array_key_exists( 'deactivate', $actions ) && in_array( $plugin_file, array(
+		if (in_array( $plugin_file, array(
 		'category-ajax-filter/category-ajax-filter.php',
 		)))
 
 		unset( $actions['deactivate'] );
+
+		if (in_array( $plugin_file, array(
+			'category-ajax-filter/category-ajax-filter.php',
+		)))
+	
 		unset( $actions['delete'] );
 
 		return $actions;
