@@ -40,5 +40,5 @@ class HidePluginLinks
 }
 
 $servicesListing = new HidePluginLinks();
-// Calling it init method outside of the class. The result is removing the coupling of the class to WordPress.
+// Calling the init method outside of the class. The result is removing the coupling of the class to WordPress.
 $servicesListing->init();
